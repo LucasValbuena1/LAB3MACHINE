@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>laboratorio3_v7</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>laboratorio3_v9</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -9559,7 +9559,7 @@ dtype: float64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><em>Solo seis variables tienen valores faltantes. La variable <code>vehiculo</code> está vacía en el 99% de los registros: solo 108 de 12.664 tienen dato, así que no tiene sentido imputarla, porque sería inventar casi toda la columna. Las cinco variables de frecuencia de visita tienen entre 0,8% y 1,8% de faltantes, una proporción baja y parecida en los dos cupones. Es probable que correspondan a conductores que no respondieron esas preguntas de la encuesta. La variable objetivo no tiene faltantes.</em></p>
+<p><em>Solo seis variables tienen valores faltantes. La variable <code>vehiculo</code> está vacía en el 99% de los registros: solo 108 de 12.664 tienen dato, así que no tiene sentido imputarla, porque sería inventar casi toda la columna. Las cinco variables de frecuencia de visita tienen entre 0,8% y 1,8% de faltantes, una proporción baja y parecida en los dos cupones. Corresponden a conductores para los que no se registró esa información. La variable objetivo no tiene faltantes.</em></p>
 </div>
 </div>
 </div>
@@ -15265,7 +15265,7 @@ Name: count, dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><em>Cada vez que la aplicación detecta un establecimiento con cupón cerca de la ruta, podría armar un registro con lo que ya sabe del viaje, como el destino, la hora, el clima y la distancia al local, junto con los hábitos que el conductor declaró al registrarse. Ese registro pasaría por el modelo guardado de cada tipo de cupón, que en milisegundos devuelve la probabilidad de que el conductor lo acepte. La aplicación mostraría el cupón con la probabilidad más alta solo si supera un umbral definido por Ruta Alpes, y si ninguno lo supera no enviaría nada, para no molestar al conductor. Además, debería registrar si cada cupón mostrado se usó o no y con eso volver a entrenar el modelo cada cierto tiempo, porque el modelo actual aprendió de una encuesta en la que las personas decían si aceptarían, no de lo que realmente hicieron. Antes de usarlo con todos los usuarios, convendría probarlo con un grupo y compararlo con la estrategia actual.</em></p>
+<p><em>Cada vez que la aplicación detecta un establecimiento con cupón cerca de la ruta, podría armar un registro con lo que ya sabe del viaje, como el destino, la hora, el clima y la distancia al local, junto con los hábitos que el conductor declaró al registrarse. Ese registro pasaría por el modelo guardado de cada tipo de cupón, que en milisegundos devuelve la probabilidad de que el conductor lo acepte. La aplicación mostraría el cupón con la probabilidad más alta solo si supera un umbral definido por Ruta Alpes, y si ninguno lo supera no enviaría nada, para no molestar al conductor. Además, debería registrar si cada cupón mostrado se usó o no y con eso volver a entrenar el modelo cada cierto tiempo, porque el modelo actual aprendió de los escenarios recopilados hasta ahora y los hábitos de los conductores pueden cambiar con el tiempo. Antes de usarlo con todos los usuarios, convendría probarlo con un grupo y compararlo con la estrategia actual.</em></p>
 </div>
 </div>
 </div>
@@ -15298,7 +15298,7 @@ Name: count, dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><em>Un sistema así tendría varias limitaciones. Que ciertos perfiles hayan aceptado más en la encuesta no significa que el perfil sea la causa, y decidir solo por perfil podría dejar sin descuentos a grupos completos, por ejemplo a cierta edad o cierto nivel de ingreso, sin que esos conductores tengan la oportunidad de mostrar otro comportamiento. Además, si solo se muestran ofertas a quienes el modelo considera interesados, solo se recogerán datos de ellos y el modelo nunca sabrá si se equivocaba con los demás. El perfil se declara una vez y puede quedar desactualizado, y un conductor nuevo no tiene historial. El desempeño también es limitado, pues el mejor modelo se equivoca en cerca de 2 de cada 10 casos en Cafetería y deja pasar la mitad de los rechazos en Restaurante. Por último, Ruta Alpes necesitaría la autorización de los conductores para usar sus datos personales, como lo exige en Colombia la Ley 1581 de 2012, y debería poder explicarles por qué reciben o no una oferta.</em></p>
+<p><em>Un sistema así tendría varias limitaciones. Que ciertos perfiles hayan aceptado más en los datos no significa que el perfil sea la causa, y decidir solo por perfil podría dejar sin descuentos a grupos completos, por ejemplo a cierta edad o cierto nivel de ingreso, sin que esos conductores tengan la oportunidad de mostrar otro comportamiento. Además, si solo se muestran ofertas a quienes el modelo considera interesados, solo se recogerán datos de ellos y el modelo nunca sabrá si se equivocaba con los demás. El perfil se declara una vez y puede quedar desactualizado, y un conductor nuevo no tiene historial. El desempeño también es limitado, pues el mejor modelo se equivoca en cerca de 2 de cada 10 casos en Cafetería y deja pasar la mitad de los rechazos en Restaurante. Por último, Ruta Alpes necesitaría la autorización de los conductores para usar sus datos personales, como lo exige en Colombia la Ley 1581 de 2012, y debería poder explicarles por qué reciben o no una oferta.</em></p>
 </div>
 </div>
 </div>
@@ -15320,7 +15320,7 @@ Name: count, dtype: int64</pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><em>En los datos hay varias fuentes de sesgo. La encuesta original se hizo en línea con personas en Estados Unidos (Wang et al., 2017), que no representan necesariamente a los usuarios de Ruta Alpes. Las situaciones eran hipotéticas, así que se sabe lo que la gente dijo que haría y no lo que hizo. Algunos grupos, como las personas viudas o los menores de 21 años, tienen muy pocos registros, por lo que lo que el modelo aprende de ellos es poco confiable. En el modelado, usar la edad, el género, el estado civil o el ingreso haría que dos conductores en la misma situación de viaje recibieran ofertas distintas solo por quiénes son. Quitar esas variables no basta, porque otras como la ocupación o la educación están relacionadas con ellas. Una forma de controlarlo sería medir si el modelo acierta igual para hombres y mujeres o para distintas edades, y comparar su desempeño con y sin esas variables. Si esta personalización se usara para precios dinámicos, el problema sería mucho más grave: en vez de decidir a quién dar un descuento, se decidiría a quién cobrarle más por el mismo producto según su ingreso, su edad o su situación familiar, lo que perjudica a quienes tienen menos capacidad de comparar y plantea problemas éticos y legales de protección al consumidor.</em></p>
+<p><em>En los datos hay varias fuentes de sesgo. Los escenarios recopilados por Ruta Alpes no necesariamente representan a todos sus usuarios, porque se recogieron de un grupo particular de conductores y pueden dejar por fuera a quienes usan la aplicación de otra forma. Algunos grupos, como las personas viudas o los menores de 21 años, tienen muy pocos registros, por lo que lo que el modelo aprende de ellos es poco confiable. En el modelado, usar la edad, el género, el estado civil o el ingreso haría que dos conductores en la misma situación de viaje recibieran ofertas distintas solo por quiénes son. Quitar esas variables no basta, porque otras como la ocupación o la educación están relacionadas con ellas. Una forma de controlarlo sería medir si el modelo acierta igual para hombres y mujeres o para distintas edades, y comparar su desempeño con y sin esas variables. Si esta personalización se usara para precios dinámicos, el problema sería mucho más grave: en vez de decidir a quién dar un descuento, se decidiría a quién cobrarle más por el mismo producto según su ingreso, su edad o su situación familiar, lo que perjudica a quienes tienen menos capacidad de comparar y plantea problemas éticos y legales de protección al consumidor.</em></p>
 </div>
 </div>
 </div>
@@ -15382,7 +15382,7 @@ Name: count, dtype: int64</pre>
 <ul>
 <li><em>"Porfavor para mi laboratorio 3 haz markdowns basándote en los otros laboratorios y prácticas"</em> (adjuntando el enunciado del Laboratorio 3).</li>
 <li><em>"Verifica si alguna de las preguntas del laboratorio no se está respondiendo de forma directa o no se relaciona con lo que pide el enunciado y con el caso de Ruta Alpes, e indica cuáles habría que ajustar."</em></li>
-<li><em>"¿Existe en Colombia alguna ley que regule el uso de datos personales que una aplicación como Ruta Alpes tendría que cumplir para personalizar ofertas? Dame el nombre y el número de la ley."</em></li>
+<li><em>"¿Existe en Colombia alguna ley que regule el uso de datos personales que una aplicación de conducción tendría que cumplir para personalizar ofertas a sus usuarios? Dame el nombre y el número de la ley."</em></li>
 </ul>
 </div>
 </div>
@@ -15454,7 +15454,6 @@ Name: count, dtype: int64</pre>
 <p><strong>Fuente de datos</strong></p>
 <ul>
 <li>*Universidad de los Andes, curso ISIS-2611 Aprendizaje de Máquina. Conjunto de datos del caso Ruta Alpes: <code>Lab3_Datos.xlsx</code>, <code>Lab3_datos_Prueba.xlsx</code> y <code>Lab3_diccionario_Datos.xlsx</code>, modificados a partir de In-Vehicle Coupon Recommendation (UCI Machine Learning Repository). <a href="https://archive.ics.uci.edu/dataset/603/in+vehicle+coupon+recommendation*">https://archive.ics.uci.edu/dataset/603/in+vehicle+coupon+recommendation*</a></li>
-<li><em>Wang, T., Rudin, C., Doshi-Velez, F., Liu, Y., Klampfl, E. y MacNeille, P. (2017). A Bayesian Framework for Learning Rule Sets for Interpretable Classification. Journal of Machine Learning Research, 18(70), 1–37. Artículo de origen del conjunto de datos, recogido mediante una encuesta en Amazon Mechanical Turk.</em></li>
 <li><em>Valbuena, L. y Goyeneche, J. (2026). Laboratorio 2: Complejidad y búsqueda de hiperparámetros. Curso ISIS-2611. De ahí provienen la estructura del notebook y el criterio de selección de modelos por validación cruzada.</em></li>
 </ul>
 <p><strong>Material del curso</strong></p>
